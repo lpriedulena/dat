@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 body{
     background-color:buttonhighlight;
     font-family: Arial;
-    width: 80%;
+    text-size: larger;
 }
 
 h1{
@@ -48,3 +48,10 @@ li a{
 li a:hover {
   background-color:darkgray;
 }
+
+#vidus {
+    width: 85%;
+    text-align: center;
+    margin: auto;
+}
+
