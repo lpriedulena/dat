@@ -9,6 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 body{
     background-color:buttonhighlight;
     font-family: Arial;
+    padding: 30px;
 }
 
 h1{
@@ -22,6 +23,10 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color:lightslategrey;
+}
+
+h2, h3 {
+    text-align: center;
 }
 
 li{
