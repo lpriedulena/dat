@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 body{
     background-color:buttonhighlight;
     font-family: Arial;
-    padding: 30px;
+    width: 80%;
 }
 
 h1{
@@ -17,7 +17,7 @@ h1{
     font-size: 50px;
 }
 
-ul {
+ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -25,7 +25,11 @@ ul {
   background-color:lightslategrey;
 }
 
-h2, h3 {
+h2{
+    text-align: center;
+}
+
+h3{
     text-align: center;
 }
 
