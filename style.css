@@ -25,11 +25,7 @@ ul{
   background-color:lightslategrey;
 }
 
-h2{
-    text-align: center;
-}
-
-h3{
+h2, h3{
     text-align: center;
 }
 
@@ -72,3 +68,11 @@ nav{
     top: 0;
     width: 100%;
 }
+
+ img{
+     height: 200px;
+     border: 2px;
+     border-color: darkgray;
+     border-radius: 4px;
+ }
+     
