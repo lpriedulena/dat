@@ -38,11 +38,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <button type="button" name="poga" onclick="dienas()">Aprēķināt</button>
 
             <p>Līdz svētkiem atlikušas</p>
-            <input type="text" id="dienas" name="dienas" readonly> dienas :)
+            <input type="text" id="Dienas" name="Dienas" readonly> dienas :)
         </form>
 
         <script>
-            function dienas(){
+            function Dienas(){
                 let gads = document.getElementById("gads").value;
                 let menesis = document.getElementById("menesis").value -1;
                 let diena = document.getElementById("diena").value;
@@ -55,7 +55,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 }
 
                 let atlikusasDienas = Math.ceil((dzd - sodien) / (1000*60*60*24));
-                document.getElementById("dienas").value = atlikusasDienas;
+                document.getElementById("Dienas").value = atlikusasDienas;
             }
         </script>
     </body>
