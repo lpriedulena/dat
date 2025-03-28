@@ -11,5 +11,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <h1>Informācijas daudzuma mērvienības</h1>
+        <form>
+            <p>1 Baits = <input type="text" id="bits" readonly>biti</p>
+            <button type="button" onclick="document.getElementById('bits').value = 8">Pārvērst</button>
+
+            <p>1 Kilobaits (KB) = <input type="text" id="baiti" readonly>baiti</p>
+            <button type="button" onclick="document.getElementById('baiti').value = 1024">Pārvērst</button>
+
+            <p>1 Megabaits (MB) = <input type="text" id="kilobaiti" readonly>kilobaiti</p>
+            <button type="button" onclick="document.getElementById('kilobaiti').value = 1024">Pārvērst</button>
+        </form>
     </body>
 </html>
