@@ -8,8 +8,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Mans datorikas portfolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gaidot dzimšanas dienu...</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <h1>Gaidot dzimšanas dienu...</h1>
+        <hr>
+
+        <form>
+            <p>Ievadi pilnu datumu, kad Tev būs tuvākā dzimšanas diena:</p>
+            <label for="gads">Gads:</label>
+            <input type="text" id="gads" name="gads"><br>
+
+            <label for="menesis">Menesis:</label>
+            <input type="text" id="menesis" name="menesis"><br>
+
+            <label for="diena">Diena:</label>
+            <input type="text" id="diena" name="diena"><br>
+
+            <button type="button" name="poga" onclick="dienas()">Aprēķināt</button>
+
+            <p>Līdz svētkiem atlikušas</p>
+            <input type="text" id="dienas" name="dienas" readonly> dienas :)
+        </form>
+
+        <script>
+            function dienas(){
+                let gads = document.getElementById("gads").value;
+                let menesis = document.getElementById("menesis").value -1;
+                let diena = document.getElementById("diena").value;
+
+                let.sodien = new Date();
+                let dzdz = new Date(gads, menesis, diena):
+
+                if(dzd < sodien){
+                    dzd.setFullYear(sodien.getFullYear() +1);
+                }
+
+                let atlikusasDienas = Math.ceil((dzd - sodien) / (1000*60*60*24));
+                document.getElementById("dienas").value = atlikusasDienas;
+            }
+        </script>
     </body>
 </html>
