@@ -1,62 +1,52 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>Mans datorikas portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gaidot dzimšanas dienu...</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaidot dzimšanas dienu</title>
+  </head>
+  <body>
+     <h1>Gaidot dzimšanas dienu..</h1>
+    <hr>
+    <form>
+      <p>Ievadi pilnu datumu, kad Tev būs tuvākā dzimšanas diena</p>
+       <label for="gads">Gads:</label>
+        <input type="text" id="gads" name="gads"><br><br>
+        <label for="menesis">Mēnesis:</label>
+        <input type="text" id="menesis" name="menesis"><br><br>
+        <label for="datums">Diena:</label>
+        <input type="text" id="datums" name="datums"><br><br>
+        <button type="button" onclick="dienas();">Aprēķināt dienu skaitu līdz dzimšanas dienai</button>
+       </form>
+    
+      <p>Līdz svētkiem atlikušas</p> 
+      <input type="text" name="dienas" id="dienas" readonly>
+      <p> dienas</p>
 
-        <nav>
-        <ul>
-            <li><a href="index.html">Sākums</a></li>
-            <li><a href="skola.html">Skola</a></li>
-            <li><a href="mervienibas.html">Mērvienības</a></li>
-        </ul>
-        </nav>
-        
-        <h1>Gaidot dzimšanas dienu...</h1>
-        <hr>
+    <script>
+       function dienas() {
+            var gads = parseInt(document.getElementById("gads").value);
+            var menesis = parseInt(document.getElementById("menesis").value);
+            var datums = parseInt(document.getElementById("datums").value);
 
-        <form>
-            <p>Ievadi pilnu datumu, kad Tev būs tuvākā dzimšanas diena:</p>
-            <label for="gads">Gads:</label>
-            <input type="text" id="gads" name="gads"><br>
-
-            <label for="menesis">Menesis:</label>
-            <input type="text" id="menesis" name="menesis"><br>
-
-            <label for="diena">Diena:</label>
-            <input type="text" id="diena" name="diena"><br>
-
-            <button type="button" name="poga" onclick="dienas()">Aprēķināt</button>
-
-            <p>Līdz svētkiem atlikušas</p>
-            <input type="text" id="Dienas" name="Dienas" readonly> dienas :)
-        </form>
-
-        <script>
-            function Dienas(){
-                let gads = document.getElementById("gads").value;
-                let menesis = document.getElementById("menesis").value -1;
-                let diena = document.getElementById("diena").value;
-
-                let.sodien = new Date();
-                let dzd = new Date(gads, menesis, diena):
-
-                if(dzd < sodien){
-                    dzd.setFullYear(sodien.getFullYear() +1);
-                }
-
-                let atlikusasDienas = Math.ceil((dzd - sodien) / (1000*60*60*24));
-                document.getElementById("Dienas").value = atlikusasDienas;
+            if (isNaN(gads) || isNaN(menesis) || isNaN(datums)) {
+                alert("Lūdzu, ievadiet derīgus skaitļus!");
+                return;
             }
-        </script>
-    </body>
+
+            var dzimsanasDatums = new Date(new Date().getFullYear(), menesis - 1, datums);
+            var todaysDate = new Date();
+         
+            if (todaysDate > dzimsanasDatums) {
+                dzimsanasDatums.setFullYear(dzimsanasDatums.getFullYear() + 1);
+            }
+
+            var timeDifference = dzimsanasDatums - todaysDate;
+            var dienasLidzDzimšanas = Math.ceil(timeDifference / (1000 * 3600 * 24)); 
+
+            document.getElementById("dienas").value = dienasLidzDzimšanas;
+        }
+    </script>
+  
+  </body>
 </html>
