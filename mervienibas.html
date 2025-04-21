@@ -1,26 +1,67 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>Mans datorikas portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Informācijas daudzuma mērvienības</h1>
-        <form>
-            <p>1 Baits = <input type="text" id="bits" readonly>biti</p>
-            <button type="button" onclick="document.getElementById('bits').value = 8">Pārvērst</button>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Informācijas daudzuma mērvienības</title>
+    <style>
+        body {
+            background-image: url('bildes/cipari.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
 
-            <p>1 Kilobaits (KB) = <input type="text" id="baiti" readonly>baiti</p>
-            <button type="button" onclick="document.getElementById('baiti').value = 1024">Pārvērst</button>
+        form {
+            background-color: rgb(220, 220, 0); /* Sajaukta krāsa: sarkans + zaļš */
+            padding: 20px;
+            width: 300px;
+            font-size: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
 
-            <p>1 Megabaits (MB) = <input type="text" id="kilobaiti" readonly>kilobaiti</p>
-            <button type="button" onclick="document.getElementById('kilobaiti').value = 1024">Pārvērst</button>
-        </form>
-    </body>
+        input[type="text"] {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Informācijas daudzuma mērvienības</h1>
+
+    <form>
+        <p>
+            1 baits = 
+            <input type="text" id="baiti">
+        </p>
+        <p>
+            1 kilobaits = 
+            <input type="text" id="kb">
+        </p>
+        <p>
+            1 megabaits = 
+            <input type="text" id="mb">
+        </p>
+
+        <button type="button" onclick="paraditRezultatu()">Parādīt</button>
+        <button type="reset">Notīrīt</button>
+    </form>
+
+    <script>
+        function paraditRezultatu() {
+            document.getElementById("baiti").value = "8 biti";
+            document.getElementById("kb").value = "1024 baiti";
+            document.getElementById("mb").value = "1024 kilobaiti";
+        }
+    </script>
+</body>
 </html>
