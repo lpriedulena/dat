@@ -10,57 +10,77 @@
             font-family: Arial, sans-serif;
         }
 
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 40px;
+        }
+
         form {
-            background-color: rgb(220, 220, 0); /* Sajaukta krāsa: sarkans + zaļš */
+            background-color: rgb(220, 220, 0); /* sajaukums: 220 red + 220 green */
+            width: 400px;
+            margin: 40px auto;
             padding: 20px;
-            width: 300px;
             font-size: 20px;
-            margin: 50px auto;
             border-radius: 10px;
         }
 
+        p {
+            margin-bottom: 20px;
+        }
+
         input[type="text"] {
-            width: 100%;
-            margin-top: 5px;
-            margin-bottom: 15px;
+            width: 60%;
             font-size: 18px;
             padding: 5px;
+            margin-left: 10px;
         }
 
         button {
-            padding: 10px 15px;
             font-size: 16px;
-            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 10px;
             margin-right: 10px;
+            cursor: pointer;
+        }
+
+        label {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1 style="text-align:center;">Informācijas daudzuma mērvienības</h1>
+    <h1>Informācijas daudzuma mērvienības</h1>
 
     <form>
         <p>
-            1 baits = 
-            <input type="text" id="baiti">
-        </p>
-        <p>
-            1 kilobaits = 
-            <input type="text" id="kb">
-        </p>
-        <p>
-            1 megabaits = 
-            <input type="text" id="mb">
+            <input type="text" id="gb" value="2"> GB =
         </p>
 
-        <button type="button" onclick="paraditRezultatu()">Parādīt</button>
-        <button type="reset">Notīrīt</button>
+        <p>
+            <button type="button" onclick="izteiktMB()">Izteikt megabaitos</button>
+            <input type="text" id="mb" readonly> MB
+        </p>
+
+        <p>
+            <button type="button" onclick="izteiktMiB()">Izteikt mibibaitos</button>
+            <input type="text" id="mib" readonly> MiB
+        </p>
     </form>
 
     <script>
-        function paraditRezultatu() {
-            document.getElementById("baiti").value = "8 biti";
-            document.getElementById("kb").value = "1024 baiti";
-            document.getElementById("mb").value = "1024 kilobaiti";
+        function izteiktMB() {
+            const gb = parseFloat(document.getElementById("gb").value);
+            if (!isNaN(gb)) {
+                document.getElementById("mb").value = gb * 1000;
+            }
+        }
+
+        function izteiktMiB() {
+            const gb = parseFloat(document.getElementById("gb").value);
+            if (!isNaN(gb)) {
+                document.getElementById("mib").value = (gb * 1024);
+            }
         }
     </script>
 </body>
